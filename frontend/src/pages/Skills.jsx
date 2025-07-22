@@ -52,7 +52,7 @@ const Skills = () => {
     <section className="bg-dots relative py-20 px-0 text-white bg-[#0b0f19] overflow-hidden select-none">
       <h2 className="text-3xl font-bold text-center mb-16">Tech & Skills</h2>
 
-      <div className="flex flex-col gap-10 w-full overflow-hidden">
+      <div className="flex flex-col gap-16 w-full overflow-hidden">
         {/* Top Row */}
         <motion.div
           className="flex w-max gap-10"

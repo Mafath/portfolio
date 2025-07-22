@@ -16,6 +16,9 @@ const AboutMe = () => {
     {/* // <div id="about" className="relative text-gray-300 px-6 md:px-28 py-20 flex flex-col md:flex-row items-center justify-between gap-16 overflow-hidden bg-[#0C0C0C]"> */}
 {/* 030303   0b0f19*/}
 
+
+
+
       {/* Left Content */}
       <div ref={ref} className="md:w-7/12 z-10 space-y-6">
         <motion.p
