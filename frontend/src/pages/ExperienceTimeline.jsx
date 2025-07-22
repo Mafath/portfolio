@@ -40,13 +40,13 @@ const ExperienceTimeline = () => {
           const isLeft = index % 2 === 0;
 
           return (
-            <div key={index} className="relative mb-16 flex items-center justify-between w-full">
+            <div key={index} className="relative mb-2 flex items-center justify-between w-full">
               {/* Left Block */}
-              <div className={`w-5/12 ${isLeft ? "" : "invisible"}`}>
-                <div className="bg-[#131826] border border-gray-700 rounded-xl p-6 shadow-md">
-                  <h3 className="text-xl font-semibold mb-1">{exp.title}</h3>
-                  <p className="text-purple-400 text-sm mb-2">{exp.company}</p>
-                  <p className="text-gray-400 text-sm mb-2">{exp.date}</p>
+              <div className={`w-2/2 ${isLeft ? "text-right" : "invisible"}`}>
+                <div className=" mr-4">
+                  <h3 className="text-sm font-semibold mb-1">{exp.title}</h3>
+                  <p className="text-purple-400 text-sm mb-1">{exp.company}</p>
+                  <p className="text-gray-400 text-sm mb-1">{exp.date}</p>
                   <p className="text-gray-300 text-sm">{exp.description}</p>
                 </div>
               </div>
@@ -57,11 +57,11 @@ const ExperienceTimeline = () => {
               </div>
 
               {/* Right Block */}
-              <div className={`w-5/12 ${isLeft ? "invisible" : ""}`}>
-                <div className="bg-[#131826] border border-gray-700 rounded-xl p-6 shadow-md">
-                  <h3 className="text-xl font-semibold mb-1">{exp.title}</h3>
-                  <p className="text-purple-400 text-sm mb-2">{exp.company}</p>
-                  <p className="text-gray-400 text-sm mb-2">{exp.date}</p>
+              <div className={`w-2/2 ${isLeft ? "invisible" : ""}`}>
+                <div className=" ml-4">
+                  <h3 className="text-sm font-semibold mb-1">{exp.title}</h3>
+                  <p className="text-purple-400 text-sm mb-1">{exp.company}</p>
+                  <p className="text-gray-400 text-sm mb-1">{exp.date}</p>
                   <p className="text-gray-300 text-sm">{exp.description}</p>
                 </div>
               </div>
