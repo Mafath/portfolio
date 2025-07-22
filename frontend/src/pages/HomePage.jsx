@@ -2,6 +2,8 @@ import React from "react";
 import profileImage from '../Assets/black.png';
 import AboutMe from "./AboutMe.jsx";
 import { motion } from "framer-motion";
+import ExperienceTimeline from "./ExperienceTimeline.jsx";
+
 
 
 
@@ -58,7 +60,7 @@ const HomePage = () => {
                   href="https://instagram.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white"
+                  className="hover:text-white transform hover:-translate-y-2 transition-transform duration-300"
                 >
                   <i className="fab fa-instagram"></i>
                 </a>
@@ -66,7 +68,7 @@ const HomePage = () => {
                   href="https://twitter.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white"
+                  className="hover:text-white transform hover:-translate-y-2 transition-transform duration-300"
                 >
                   <i className="fab fa-twitter"></i>
                 </a>
@@ -74,7 +76,7 @@ const HomePage = () => {
                   href="https://linkedin.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white"
+                  className="hover:text-white transform hover:-translate-y-2 transition-transform duration-300"
                 >
                   <i className="fab fa-linkedin"></i>
                 </a>
@@ -82,12 +84,15 @@ const HomePage = () => {
                   href="https://github.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white"
+                  className="hover:text-white transform hover:-translate-y-2 transition-transform duration-300"
                 >
                   <i className="fab fa-github"></i>
                 </a>
               </div>
             </div>
+
+            {/* <SocialIcons /> */}
+
 
             </motion.div>
 
@@ -110,6 +115,7 @@ const HomePage = () => {
 
 
 <AboutMe />
+<ExperienceTimeline />
 
 
 

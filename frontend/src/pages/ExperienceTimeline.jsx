@@ -1,0 +1,76 @@
+import React from "react";
+
+const experiences = [
+  {
+    title: "Data Scientist Intern",
+    company: "ABC Analytics",
+    date: "Jan 2024 - Apr 2024",
+    description: "Worked on building predictive models using Python and Scikit-learn for customer churn analysis.",
+  },
+  {
+    title: "AI Research Assistant",
+    company: "University Lab",
+    date: "May 2023 - Dec 2023",
+    description: "Contributed to NLP research, focused on transformer-based text summarization models.",
+  },
+  {
+    title: "Machine Learning Trainee",
+    company: "XYZ Academy",
+    date: "Jun 2022 - Dec 2022",
+    description: "Completed intensive training on supervised & unsupervised learning with hands-on projects.",
+  },
+  {
+    title: "Freelance Data Analyst",
+    company: "Upwork",
+    date: "Jan 2022 - May 2022",
+    description: "Delivered data visualizations and dashboards using Python, Pandas, and Power BI.",
+  },
+];
+
+const ExperienceTimeline = () => {
+  return (
+    <section className="py-20 bg-[#0b0f19] text-white font-sans">
+      <h2 className="text-3xl font-bold text-center mb-16">Experience</h2>
+      <div className="relative max-w-4xl mx-auto">
+        {/* Vertical Line */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-purple-600" />
+
+        {/* Timeline Items */}
+        {experiences.map((exp, index) => {
+          const isLeft = index % 2 === 0;
+
+          return (
+            <div key={index} className="relative mb-16 flex items-center justify-between w-full">
+              {/* Left Block */}
+              <div className={`w-5/12 ${isLeft ? "" : "invisible"}`}>
+                <div className="bg-[#131826] border border-gray-700 rounded-xl p-6 shadow-md">
+                  <h3 className="text-xl font-semibold mb-1">{exp.title}</h3>
+                  <p className="text-purple-400 text-sm mb-2">{exp.company}</p>
+                  <p className="text-gray-400 text-sm mb-2">{exp.date}</p>
+                  <p className="text-gray-300 text-sm">{exp.description}</p>
+                </div>
+              </div>
+
+              {/* Dot */}
+              <div className="z-10">
+                <div className="w-5 h-5 bg-purple-600 rounded-full border-4 border-[#0b0f19]" />
+              </div>
+
+              {/* Right Block */}
+              <div className={`w-5/12 ${isLeft ? "invisible" : ""}`}>
+                <div className="bg-[#131826] border border-gray-700 rounded-xl p-6 shadow-md">
+                  <h3 className="text-xl font-semibold mb-1">{exp.title}</h3>
+                  <p className="text-purple-400 text-sm mb-2">{exp.company}</p>
+                  <p className="text-gray-400 text-sm mb-2">{exp.date}</p>
+                  <p className="text-gray-300 text-sm">{exp.description}</p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+};
+
+export default ExperienceTimeline;
