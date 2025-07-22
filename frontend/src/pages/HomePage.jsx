@@ -3,6 +3,7 @@ import profileImage from '../Assets/black.png';
 import AboutMe from "./AboutMe.jsx";
 import { motion } from "framer-motion";
 import ExperienceTimeline from "./ExperienceTimeline.jsx";
+import Skills from "./Skills.jsx";
 
 
 
@@ -116,6 +117,7 @@ const HomePage = () => {
 
 <AboutMe />
 <ExperienceTimeline />
+<Skills />
 
 
 

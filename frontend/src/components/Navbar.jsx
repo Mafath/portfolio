@@ -33,10 +33,9 @@ function Navbar() {
         <div className="flex justify-center flex-grow pr-16">
           <ul className="flex space-x-8 text-gray-300">
             <li><a href="/" className="hover:text-white">Home</a></li>
-            {/* <li><a href="#service" className="hover:text-white">About me</a></li> */}
             <li><a href="#about" className="hover:text-white">About me</a></li>
             <li><a href="#blog" className="hover:text-white">Projects</a></li>
-            <li><a href="#pages" className="hover:text-white">Blog</a></li>
+            <li><a href="#work" className="hover:text-white">Work</a></li>
             <li>
               <Link to="/contact" className="hover:text-white">Contact</Link>
             </li>

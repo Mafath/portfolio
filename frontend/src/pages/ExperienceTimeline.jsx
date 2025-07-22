@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 
 const experiences = [
   {
@@ -29,45 +31,61 @@ const experiences = [
 
 const ExperienceTimeline = () => {
   return (
-    <section className="py-20 bg-[#0b0f19] text-white font-sans">
+    // <section className="py-20 bg-[#0b0f19] text-white font-sans">
+    
+    <section id="work" className="py-10 bg-[#0b0f19] bg-dots text-white font-sans relative">
+
+
       <h2 className="text-3xl font-bold text-center mb-16">Experience</h2>
       <div className="relative max-w-4xl mx-auto">
         {/* Vertical Line */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-purple-600" />
+        <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-white" />
 
         {/* Timeline Items */}
         {experiences.map((exp, index) => {
-          const isLeft = index % 2 === 0;
+  const isLeft = index % 2 === 0;
 
-          return (
-            <div key={index} className="relative mb-2 flex items-center justify-between w-full">
-              {/* Left Block */}
-              <div className={`w-2/2 ${isLeft ? "text-right" : "invisible"}`}>
-                <div className=" mr-4">
-                  <h3 className="text-sm font-semibold mb-1">{exp.title}</h3>
-                  <p className="text-purple-400 text-sm mb-1">{exp.company}</p>
-                  <p className="text-gray-400 text-sm mb-1">{exp.date}</p>
-                  <p className="text-gray-300 text-sm">{exp.description}</p>
-                </div>
-              </div>
+  return (
+    <motion.div
+      key={index}
+      className="relative mb-2 flex items-center justify-between w-full"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.3 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+    >
+      {/* Left Block */}
+      <div className={`w-2/2 ${isLeft ? "text-right" : "invisible"}`}>
+        <div className="mr-4">
+          <h3 className="text-sm font-semibold mb-1">{exp.title}</h3>
+          <p className="text-purple-400 text-sm mb-1">{exp.company}</p>
+          <p className="text-gray-400 text-sm mb-1">{exp.date}</p>
+          <p className="text-gray-300 text-sm">{exp.description}</p>
+        </div>
+      </div>
 
-              {/* Dot */}
-              <div className="z-10">
-                <div className="w-5 h-5 bg-purple-600 rounded-full border-4 border-[#0b0f19]" />
-              </div>
+      {/* Dot */}
+      <div className="z-10">
+        <div
+          className={`w-5 h-5 rounded-full border-4 border-[#0b0f19] ${
+            index === experiences.length - 1 ? "bg-purple-600" : "bg-white"
+          }`}
+        />
+      </div>
 
-              {/* Right Block */}
-              <div className={`w-2/2 ${isLeft ? "invisible" : ""}`}>
-                <div className=" ml-4">
-                  <h3 className="text-sm font-semibold mb-1">{exp.title}</h3>
-                  <p className="text-purple-400 text-sm mb-1">{exp.company}</p>
-                  <p className="text-gray-400 text-sm mb-1">{exp.date}</p>
-                  <p className="text-gray-300 text-sm">{exp.description}</p>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+      {/* Right Block */}
+      <div className={`w-2/2 ${isLeft ? "invisible" : ""}`}>
+        <div className="ml-4">
+          <h3 className="text-sm font-semibold mb-1">{exp.title}</h3>
+          <p className="text-purple-400 text-sm mb-1">{exp.company}</p>
+          <p className="text-gray-400 text-sm mb-1">{exp.date}</p>
+          <p className="text-gray-300 text-sm">{exp.description}</p>
+        </div>
+      </div>
+    </motion.div>
+  );
+})}
+
       </div>
     </section>
   );

@@ -12,11 +12,9 @@ const AboutMe = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <div id="about" className="relative text-gray-300 px-6 md:px-28 py-20 flex flex-col md:flex-row items-center justify-between gap-16 overflow-hidden bg-[#030303]">
+    <div id="about" className="relative text-gray-300 px-6 md:px-28 py-20 flex flex-col md:flex-row items-center justify-between gap-16 overflow-hidden bg-gradient-to-b from-[#030303] via-[#07070c] to-[#0b0f19]">
     {/* // <div id="about" className="relative text-gray-300 px-6 md:px-28 py-20 flex flex-col md:flex-row items-center justify-between gap-16 overflow-hidden bg-[#0C0C0C]"> */}
-
-      {/* Background Blob */}
-      <div className="absolute -top-20 -right-20 w-72 h-72 bg-purple-700 rounded-full opacity-20 filter blur-3xl"></div>
+{/* 030303   0b0f19*/}
 
       {/* Left Content */}
       <div ref={ref} className="md:w-7/12 z-10 space-y-6">
@@ -70,7 +68,7 @@ const AboutMe = () => {
           viewport={{ once: false, amount: 0.3 }}  
         >
           <button className="border border-purple-500 hover:bg-purple-500 hover:text-white text-purple-400 px-6 py-2 rounded-full transition duration-300">
-            Let's Connect
+            Find more about me!
           </button>
         </motion.div>
       </div>
